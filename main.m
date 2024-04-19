@@ -55,7 +55,7 @@ static void overwriteMainCFBundle() {
 
 static void overwriteMainNSBundle(NSBundle *newBundle) {
     // Overwrite NSBundle.mainBundle
-    NSString *oldPath = NSBundle.mainBundle.executablePath;
+    // NSString *oldPath = NSBundle.mainBundle.executablePath;
     uint32_t *mainBundleImpl = (uint32_t *)method_getImplementation(class_getClassMethod(NSBundle.class, @selector(mainBundle)));
     for (int i = 0; i < 20; i++) {
         void **_MergedGlobals = (void **)aarch64_emulate_adrp_add(mainBundleImpl[i], mainBundleImpl[i+1], (uint64_t)&mainBundleImpl[i]);
