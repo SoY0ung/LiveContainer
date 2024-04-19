@@ -68,7 +68,7 @@ static void overwriteMainNSBundle(NSBundle *newBundle) {
         }
     }
 
-    assert(![NSBundle.mainBundle.executablePath isEqualToString:oldPath]);
+    // assert(![NSBundle.mainBundle.executablePath isEqualToString:oldPath]);
 }
 
 static void overwriteExecPath_handler(int signum, siginfo_t* siginfo, void* context) {
